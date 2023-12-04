@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class FPController : MonoBehaviour
     public Camera playerCamera;
     public float walkSpeed = 6f;
     public float runSpeed = 12f;
+    public float dashSpeed = 50f;
+    public float dashDuration = 0.15f;
+    public float dashCooldown = 1;
     public float jumpPower = 7f;
     public float gravity = 10f;
  
@@ -20,8 +24,16 @@ public class FPController : MonoBehaviour
     float rotationX = 0;
  
     public bool enableMove = true;
+    public bool enableCameraRotation = true;
+
+    // dashing data
+    private bool dashing = false;
+    private float dashingTime = 0;
+    private float dashingCooldownTime = 0f;
 
     public bool CanMove => enableMove && !GameManager.Singleton.PlayingEvent;
+    public bool CanRotateCamera => CanMove && enableCameraRotation;
+    public bool DashInCooldown => dashingCooldownTime > 0;
  
     
     CharacterController characterController;
@@ -38,18 +50,48 @@ public class FPController : MonoBehaviour
         #region Handles Movment
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
- 
-        // Press Left Shift to run
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = CanMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = CanMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
- 
+        Vector3 mDirection = ((forward * Input.GetAxis("Vertical")) + (right * Input.GetAxis("Horizontal"))).normalized;
+
+        float movementAngle = Vector3.SignedAngle(forward, mDirection, Vector3.up);
+        bool canRun = Mathf.Abs(movementAngle) <= 45 && CanMove;
+        bool canDash = Mathf.Abs(movementAngle) >= 90 && characterController.isGrounded && CanMove && !DashInCooldown;
+        bool canJump = CanMove && characterController.isGrounded && !dashing;
+        bool pressedDash = Input.GetKeyDown(KeyCode.LeftShift);
+
+        if (!dashing && canDash && pressedDash)
+        {
+            dashing = true;
+            dashingTime = 0f;
+            moveDirection = mDirection * dashSpeed;
+            dashingCooldownTime = dashCooldown;
+        }
+
+        float movementDirectionY = 0;
+        if (!dashing)
+        {
+            if (dashingCooldownTime > 0)
+            {
+                dashingCooldownTime = Mathf.Max(0f,dashingCooldownTime - Time.deltaTime);
+            }
+            
+            bool isRunning = Input.GetKey(KeyCode.LeftShift) && canRun;
+            float movementSpeed = CanMove ? (isRunning ? runSpeed : walkSpeed) : 0;
+            movementDirectionY = moveDirection.y;
+            moveDirection = mDirection * movementSpeed;
+        }
+        else
+        {
+            dashingTime += Time.deltaTime;
+            if (dashingTime >= dashDuration)
+            {
+                dashing = false;
+            }
+        }
+
         #endregion
  
         #region Handles Jumping
-        if (Input.GetButton("Jump") && CanMove && characterController.isGrounded)
+        if (Input.GetButton("Jump") && canJump)
         {
             moveDirection.y = jumpPower;
         }
@@ -68,7 +110,7 @@ public class FPController : MonoBehaviour
         #region Handles Rotation
         characterController.Move(moveDirection * Time.deltaTime);
  
-        if (CanMove)
+        if (CanRotateCamera)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);

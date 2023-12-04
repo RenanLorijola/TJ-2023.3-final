@@ -1,0 +1,78 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RevolverEquipment : Equipment
+{
+
+    [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField]private float shootCooldown = 1f;
+    [SerializeField]private int maxRounds = 6;
+    [SerializeField] private ParticleSystem gunshotParticleSystem;
+    
+
+    [SerializeField]private AudioClip shootSound;
+    [SerializeField]private AudioClip reloadSound;
+    [SerializeField]private AudioClip emptySound;
+    
+    
+    
+    
+    private static readonly int Shoot = Animator.StringToHash("Shoot");
+    private static readonly int Reload = Animator.StringToHash("Reload");
+
+    private bool reloading;
+    private float cooldownTime;
+    private int currentRounds = 0;
+
+    public bool CanShoot => CanUseEquipment() && cooldownTime <= 0 && !reloading;
+    
+    
+    // Update is called once per frame
+
+    private void Awake()
+    {
+        currentRounds = maxRounds;
+    }
+
+    protected override void OnUnequip()
+    {
+        reloading = false;
+    }
+
+    void Update()
+    {
+        cooldownTime = Mathf.Max(0, cooldownTime - Time.deltaTime);
+        if (CanUseEquipment())
+        {
+            if (Input.GetMouseButtonDown(0) && CanShoot)
+            {
+                cooldownTime = shootCooldown;
+                if (currentRounds <= 0)
+                {
+                    audioSource.PlayOneShot(emptySound);
+                }
+                else
+                {
+                    audioSource.PlayOneShot(shootSound);
+                    animator.SetTrigger(Shoot);
+                    currentRounds--;
+                    gunshotParticleSystem.Play();
+                }
+            } else if (Input.GetKeyDown(KeyCode.R))
+            {
+                reloading = true;
+                audioSource.PlayOneShot(reloadSound);
+                animator.SetTrigger(Reload);
+            }
+        }
+    }
+
+    public void ReloadAnimationEnd()
+    {
+        reloading = false;
+        currentRounds = maxRounds;
+    }
+}
