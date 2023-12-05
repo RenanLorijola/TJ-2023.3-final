@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Equipment : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Equipment : MonoBehaviour
     [SerializeField] private string equipmentKey;
 
     public string EquipmentKey => equipmentKey;
+    public Sprite Icon;
 
     public static Equipment Current { get; private set; }
 

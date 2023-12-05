@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip playerHurtSound;
+
+    public Transform ItemContent;
+    public GameObject InventoryItem;
 
 
     public int CurrentHealth { get; private set; }
@@ -71,7 +76,6 @@ public class PlayerManager : MonoBehaviour
             GameHudManager.Singleton.ShowInteract(false);
         }
         
-        
         // Equipe Next Item
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -122,6 +126,8 @@ public class PlayerManager : MonoBehaviour
             equipedItemIndex = -1;
         }
     }
+
+    public List<Equipment> GetEquipments() => this.equipments;
 
     public void NextEquipment() // This is a temporary solution to test the itens
     {
