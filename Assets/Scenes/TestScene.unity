@@ -12466,7 +12466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5289b6bddd0d04a4dae976f37557f747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipmentKey: "Kit M\xE9dico"
+  equipmentKey: medkit
   Icon: {fileID: 21300000, guid: 6e5bb46259c9d594bb076d08b630722f, type: 3}
 --- !u!1 &1372070087
 GameObject:
@@ -18471,7 +18471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62528f5e80279c24da5e61e38334a324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipmentKey: Faca
+  equipmentKey: knife
   Icon: {fileID: 21300000, guid: 5f829ad7ec66443448d40e53b7d08467, type: 3}
   knifeAudioSource: {fileID: 6978403264923012915}
   attackCooldown: 0.5

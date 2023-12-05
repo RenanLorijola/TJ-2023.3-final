@@ -18,13 +18,15 @@ public class InventoryManager : MonoBehaviour
 
         foreach (var item in equipments)
         {
-            GameObject obj = Instantiate(InventoryItem, ItemContent);
-            var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
-            var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+            if (!item.isActiveAndEnabled)
+            {
+                GameObject obj = Instantiate(InventoryItem, ItemContent);
+                var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
+                var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
 
-            itemName.text = item.EquipmentKey;
-            itemIcon.sprite = item.Icon;
-            
+                itemName.text = item.EquipmentKey;
+                itemIcon.sprite = item.Icon;
+            }            
         }
     }
 }
