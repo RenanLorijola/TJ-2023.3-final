@@ -1940,7 +1940,7 @@ MonoBehaviour:
   gravity: 10
   lookSpeed: 2
   lookXLimit: 45
-  canMove: 1
+  enableMove: 1
 --- !u!143 &1141519621
 CharacterController:
   m_ObjectHideFlags: 0
