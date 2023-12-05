@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,11 +12,19 @@ public class KnifeEquipment : Equipment
 
 
     [SerializeField] private AudioClip attackSound;
+
+    [SerializeField] private GameObject knifeHitObject;
     
     
     private float cooldownTime = 0f;
 
     private static readonly int Attack = Animator.StringToHash("Attack");
+
+
+    private void Awake()
+    {
+        knifeHitObject.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,5 +43,12 @@ public class KnifeEquipment : Equipment
     public void CheckHit()
     {
         knifeAudioSource.PlayOneShot(attackSound);
+        knifeHitObject.SetActive(true);
+        Invoke("CheckHitEnd", 0.1f);
+    }
+
+    protected void CheckHitEnd()
+    {
+        knifeHitObject.SetActive(false);
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 public class RevolverEquipment : Equipment
 {
 
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private int damage = 40;
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource audioSource;
     [SerializeField]private float shootCooldown = 1f;
@@ -60,6 +62,7 @@ public class RevolverEquipment : Equipment
                     animator.SetTrigger(Shoot);
                     currentRounds--;
                     gunshotParticleSystem.Play();
+                    CheckHit();
                 }
             } else if (Input.GetKeyDown(KeyCode.R))
             {
@@ -74,5 +77,24 @@ public class RevolverEquipment : Equipment
     {
         reloading = false;
         currentRounds = maxRounds;
+    }
+
+    private void CheckHit()
+    {
+        var ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 999, LayerMask.GetMask("Enemy")))
+        {
+            Enemy enemy = hit.transform.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.ReceiveDamage(damage);
+            }
+            else
+            {
+                Debug.Log("Missfire ?");
+                Debug.Log(hit.transform.gameObject);
+            }
+        }
     }
 }

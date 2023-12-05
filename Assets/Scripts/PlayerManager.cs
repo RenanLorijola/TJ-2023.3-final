@@ -1,21 +1,44 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager Singleton { get; private set; }
 
     [SerializeField] private float maxInteractDistance = 4f;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private Transform equipmentHolderTransform;
     [SerializeField] private float equipAnimationDuration = 0.5f;
+    [SerializeField] private int playerMaxHealth = 100;
 
     [SerializeField] private List<Equipment> equipments;
 
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip playerHurtSound;
+
+
+    public int CurrentHealth { get; private set; }
+    public int MaxHealth => playerMaxHealth;
+    
     private int equipedItemIndex = -1;
     private float equipAnimationTime = 0f;
     private bool equiping = false;
+
+    private void Awake()
+    {
+        CurrentHealth = playerMaxHealth;
+        if (Singleton == null)
+        {
+            Singleton = this;
+        }
+        else
+        {
+            Debug.LogWarning("PlayerManager already exists");
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -104,5 +127,13 @@ public class PlayerManager : MonoBehaviour
     {
         int nextEquipmentIndex = (equipedItemIndex + 1) % equipments.Count;
         SetEquippedItem(nextEquipmentIndex);
+    }
+
+    public void ReceiveDamage(int damage)
+    {
+        CurrentHealth -= damage;
+        audioSource.PlayOneShot(playerHurtSound);
+        GameHudManager.Singleton.PlayerHealthUpdated();
+        Debug.Log(String.Format("Received Damage {0}/{1}", CurrentHealth, MaxHealth));
     }
 }
