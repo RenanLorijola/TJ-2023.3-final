@@ -432,7 +432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -700}
+  m_AnchoredPosition: {x: 0, y: -800}
   m_SizeDelta: {x: 600, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910008211
@@ -469,10 +469,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "DESENVOLVEDORES\n\nBruno Reis Galindo RA 11038215\nCamila de F\xE1tima
-    Augusta dos Santos RA 11201810901\nCarlos J\xFAnior\nDaniel Fusimoto\nFabr\xEDcio
-    Expedito Albano Gaeta RA 21032616\nLeonardo\nRenan Zago Lorijola RA 11201810622\n\nIMAGENS\nImagem
-    de fundo Menu - Pinterest\nImagem de fundo Cr\xE9ditos - Pinterest\nDemais imagens
-    - Gerado por IA Bing\n\nA\xDADIOS E SONS\nPixabay\n\n"
+    Augusta dos Santos RA 11201810901\nCarlos Alberto da Silva J\xFAnior RA 11052813\nDaniel
+    Fusimoto Pires RA 11201921874\nFabr\xEDcio Expedito Albano Gaeta RA 21032616\nGabriel
+    Lima Zambianco RA 11201722750\nLeonardo Almeida do Carmo RA 11201810622\nRenan
+    Zago Lorijola RA 11201810622\n\nIMAGENS\n\nImagem de fundo Menu - Pinterest\nImagem
+    de fundo Cr\xE9ditos - Pinterest\nDemais imagens - Gerado por IA Bing\n\nA\xDADIOS
+    E SONS\n\nPixabay\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d101f9b92e40fe4984b514f1bf4e916, type: 2}
   m_sharedMaterial: {fileID: -2831295677356119663, guid: 1d101f9b92e40fe4984b514f1bf4e916,

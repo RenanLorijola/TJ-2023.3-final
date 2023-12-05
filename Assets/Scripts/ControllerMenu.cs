@@ -11,7 +11,7 @@ public class ControllerMenu : MonoBehaviour
     }
     // Chama cena 1
      public void Iniciar() {
-        SceneManager.LoadScene("Floresta");
+        SceneManager.LoadScene("Cutscene");
     }
     // Sai do jogo
      public void Sair() {

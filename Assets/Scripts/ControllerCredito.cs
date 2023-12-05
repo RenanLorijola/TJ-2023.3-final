@@ -25,7 +25,7 @@ public class ControllerCredito: MonoBehaviour
         pos += localVectorUp * scrollSpeed * Time.deltaTime;
         transform.position = pos;
 
-        if(t > 50){
+        if(t > 40){
             SceneManager.LoadScene("Menu");
         }
     }
