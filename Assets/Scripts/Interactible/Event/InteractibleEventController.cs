@@ -115,6 +115,9 @@ public class InteractibleEventController : MonoBehaviour
            case InteractibleEventAction.ActionType.Event:
                PlayEventAction(action);
                break;
+           case InteractibleEventAction.ActionType.LoadScene:
+               LoadSceneAction(action);
+               break;
            default:
                NextAction();
                break;
@@ -186,6 +189,12 @@ public class InteractibleEventController : MonoBehaviour
     {
         action.NextEvent.TriggerEvent();
         ActionEnd(true, action);
+    }
+    
+    private void LoadSceneAction(InteractibleEventAction action)
+    {
+        ActionEnd(true, action);
+        SceneManager.LoadScene(action.SceneName);
     }
 
     private void PlayCustomAction(InteractibleEventAction action)

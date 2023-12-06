@@ -56,7 +56,7 @@ public class Equipment : MonoBehaviour
 
     protected bool CanUseEquipment()
     {
-        return true;
+        return !GameManager.Singleton.PlayingEvent;
     }
     
 }

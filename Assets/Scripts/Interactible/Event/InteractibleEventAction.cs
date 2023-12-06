@@ -8,7 +8,7 @@ public class InteractibleEventAction
 {
     public enum ActionType
     {
-        Dialog, SetFlag, Wait, FadeInOut, CustomAction, FadeBackgroundMusic, PlayAudioEffect, SetBackgroundMusic, Event
+        Dialog, SetFlag, Wait, FadeInOut, CustomAction, FadeBackgroundMusic, PlayAudioEffect, SetBackgroundMusic, Event, LoadScene
     }
     
     [SerializeField] private string actionName;
@@ -76,6 +76,11 @@ public class InteractibleEventAction
     [ConditionalField(nameof(type), false, ActionType.Event)][SerializeField] private InteractibleEventController nextEvent;
 
     public InteractibleEventController NextEvent => nextEvent;
+    
+    // Event
+    [ConditionalField(nameof(type), false, ActionType.LoadScene)][SerializeField] private String sceneName;
+
+    public String SceneName => sceneName;
     
 
 }

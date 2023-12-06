@@ -53,7 +53,7 @@ public class DialogManager : MonoBehaviour, IEventAction
         if (currentDialog.Message != null && currentDialog.Message.Length > _currentMessageWordIndex)
         {
             float scale = 1;
-            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.E))
             {
                 scale = fastForwardScale;
             }
@@ -71,7 +71,7 @@ public class DialogManager : MonoBehaviour, IEventAction
                 audioSource.Stop();
             }
             audioSource.Stop();
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)  || Input.GetKeyDown(KeyCode.E))
             {
                 NextPage();
             } 
