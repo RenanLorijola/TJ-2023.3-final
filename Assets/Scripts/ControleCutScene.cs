@@ -22,13 +22,13 @@ public class ControleCutScene : MonoBehaviour
         // Iniciaa reprodução do vídeo
         videoPlayer.Play();
     }
-
+    
     void OnVideoFinished(VideoPlayer vp)
     {
         // Remove o manipulador de eventos para evitar chamadas repetidas
         videoPlayer.loopPointReached -= OnVideoFinished;
 
         // Chama jogo
-        SceneManager.LoadScene("Floresta");
+        SceneManager.LoadScene("Vila_com_player");
     }
 }
