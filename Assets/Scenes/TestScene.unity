@@ -11268,8 +11268,8 @@ MonoBehaviour:
         Value:
         - talker: 0
           talkerCustom: "Cidad\xE3o"
-          message: "A porta est\xE1 trancada, ser\xE1 que o rapaz vermelho tem a
-            chave ????"
+          message: "A porta est\xE1 trancada, ser\xE1 que o rapaz vermelho tem a chave
+            ????"
       flagName: 
       flagValue: 0
       waitSeconds: 0
@@ -11289,8 +11289,8 @@ MonoBehaviour:
         Value:
         - talker: 0
           talkerCustom: "Cidad\xE3o"
-          message: "A porta est\xE1 trancada, ser\xE1 que o rapaz vermelho tem a
-            chave ????"
+          message: "A porta est\xE1 trancada, ser\xE1 que o rapaz vermelho tem a chave
+            ????"
       flagName: checkedLockedDoor
       flagValue: 1
       waitSeconds: 0

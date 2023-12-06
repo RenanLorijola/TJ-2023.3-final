@@ -28,6 +28,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2768097850346952479}
   m_RootOrder: 1
@@ -107,6 +108,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2768097849750165149}
   m_RootOrder: 0
@@ -186,6 +188,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2768097849610292114}
   m_Father: {fileID: 2768097850346952479}
@@ -224,7 +227,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2576023137440582333, guid: 9bca0b11a17011544bcdcda930d193c6, type: 3}
+  m_Sprite: {fileID: -2576023137440582333, guid: 9bca0b11a17011544bcdcda930d193c6,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -262,6 +266,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2768097849750165149}
   - {fileID: 2768097849564840762}
@@ -301,7 +306,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4256190864735059936, guid: 9bca0b11a17011544bcdcda930d193c6, type: 3}
+  m_Sprite: {fileID: -4256190864735059936, guid: 9bca0b11a17011544bcdcda930d193c6,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -342,6 +348,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2768097850346952479}
   m_Father: {fileID: 0}
@@ -432,7 +439,6 @@ MonoBehaviour:
   wordsPerSec: 20
   fastForwardScale: 5
   playerAudio: {fileID: 8300000, guid: 9dc8acb54d0b18c4f8c1ffb4361c5400, type: 3}
-  aiAudio: {fileID: 8300000, guid: d405f477a744be142acfc4436af3cb8e, type: 3}
   otherAudio: {fileID: 8300000, guid: 58784e4cd663fd5438e61793c7c1e6a9, type: 3}
 --- !u!82 &2768097851254799982
 AudioSource:
