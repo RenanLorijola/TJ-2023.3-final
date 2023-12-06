@@ -16,7 +16,8 @@ public class GameHudManager : MonoBehaviour
     [SerializeField] private Image fadeOverlayImage;
 
     [SerializeField] private GameObject interactFeedback;
-    
+
+    [SerializeField] private Image hurtOverlayImage;
     
 
     public void Fade(float from, float to, float seconds, Action callback)
@@ -46,6 +47,19 @@ public class GameHudManager : MonoBehaviour
     public void ShowInteract(bool show)
     {
         interactFeedback.SetActive(show);
+    }
+
+
+    public void PlayerHealthUpdated()
+    {
+        var currentHealth = PlayerManager.Singleton.CurrentHealth;
+        var maxHealth = PlayerManager.Singleton.MaxHealth;
+        var a = Mathf.Lerp(0.8f, 0, currentHealth / (float)maxHealth);
+        SetHurtOverlayAlpha(a);
+    }
+    public void SetHurtOverlayAlpha(float a)
+    {
+        hurtOverlayImage.color = new Color(1,1,1,a);
     }
     
     
