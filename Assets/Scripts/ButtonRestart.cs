@@ -5,17 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class ButtonRestart : MonoBehaviour
 {
-    void Start(){
+    void Start()
+    {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-    
-    public void BRestart() {
-        SceneManager.LoadScene("Vila_com_player");
+
+    public void BRestart()
+    {
+        SceneManager.LoadScene("Floresta");
     }
 
-    public void BVMenu() {
+    public void BVMenu()
+    {
         SceneManager.LoadScene("Menu");
     }
-    
+
 }
