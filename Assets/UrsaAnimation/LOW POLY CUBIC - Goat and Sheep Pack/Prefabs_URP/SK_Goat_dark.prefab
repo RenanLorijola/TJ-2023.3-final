@@ -3493,6 +3493,7 @@ GameObject:
   - component: {fileID: 4026167085268298943}
   - component: {fileID: 4026167085268298928}
   - component: {fileID: 4026167085268298929}
+  - component: {fileID: 3000022833108742273}
   m_Layer: 0
   m_Name: SK_Goat_dark
   m_TagString: Untagged
@@ -3537,6 +3538,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &4026167085268298929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3558,6 +3560,21 @@ MonoBehaviour:
   trotAnimation: trot_forward
   sittostandAnimation: sit_to_stand
   standtositAnimation: stand_to_sit
+  walkSpeed: 20
+  runSpeed: 40
+--- !u!65 &3000022833108742273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026167085268298930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 3, z: 1.2}
+  m_Center: {x: 0, y: 0.5, z: 0.2}
 --- !u!1 &4026167085326133820
 GameObject:
   m_ObjectHideFlags: 0

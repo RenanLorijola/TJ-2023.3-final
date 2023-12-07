@@ -2523,6 +2523,7 @@ GameObject:
   - component: {fileID: 6517686061769116560}
   - component: {fileID: 6517686061769116561}
   - component: {fileID: 6517686061769116558}
+  - component: {fileID: 4131062202421838887}
   m_Layer: 0
   m_Name: SK_Sheep_white
   m_TagString: Untagged
@@ -2567,6 +2568,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &6517686061769116558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2588,6 +2590,21 @@ MonoBehaviour:
   trotAnimation: trot_forward
   sittostandAnimation: sit_to_stand
   standtositAnimation: stand_to_sit
+  walkSpeed: 20
+  runSpeed: 40
+--- !u!65 &4131062202421838887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517686061769116559}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 3, z: 1.4}
+  m_Center: {x: 0, y: 0.5, z: 0.2}
 --- !u!1 &6517686061794323453
 GameObject:
   m_ObjectHideFlags: 0
