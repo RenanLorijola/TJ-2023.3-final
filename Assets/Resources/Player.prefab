@@ -628,6 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipmentKey: knife
+  equipmentName: 
   Icon: {fileID: 21300000, guid: 5f829ad7ec66443448d40e53b7d08467, type: 3}
   knifeAudioSource: {fileID: 3424292742417651008}
   attackCooldown: 0.5
@@ -1104,6 +1105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipmentKey: Canivete
+  equipmentName: 
   Icon: {fileID: 21300000, guid: 1bc7d206e3d80ae43a9f6bbcbdde287c, type: 3}
 --- !u!1 &5718952297910587316
 GameObject:
@@ -1337,6 +1339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipmentKey: Graveto
+  equipmentName: 
   Icon: {fileID: 21300000, guid: 5973b27e0a3d3cf408f5b28c31578d68, type: 3}
 --- !u!1 &5718952298267475080
 GameObject:
@@ -1449,6 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipmentKey: Jornal
+  equipmentName: 
   Icon: {fileID: 21300000, guid: c76e4328ce377b14987fc826661af869, type: 3}
 --- !u!1 &5718952298315895913
 GameObject:
@@ -6456,6 +6460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipmentKey: Folha Rasgada
+  equipmentName: 
   Icon: {fileID: 21300000, guid: 3ef5d80c167e40d4a9dc3c427789544e, type: 3}
 --- !u!1 &5718952299031490793
 GameObject:
@@ -6568,6 +6573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipmentKey: medkit
+  equipmentName: 
   Icon: {fileID: 21300000, guid: 6e5bb46259c9d594bb076d08b630722f, type: 3}
 --- !u!1 &5718952299244760944
 GameObject:
@@ -6669,15 +6675,9 @@ MonoBehaviour:
   equipments:
   - {fileID: 6107943118578683274}
   - {fileID: 3424292742417651010}
-  - {fileID: 5718952299031490796}
-  - {fileID: 5718952298064072665}
-  - {fileID: 5718952298963991326}
-  - {fileID: 5718952299446564680}
-  - {fileID: 5718952298267475086}
-  - {fileID: 5718952299755803655}
-  - {fileID: 5718952297876103166}
   audioSource: {fileID: 5718952299244760953}
   playerHurtSound: {fileID: 8300000, guid: ad59e109907ae044281f8206f2aaaa33, type: 3}
+  playerKillSound: {fileID: 0}
   ItemContent: {fileID: 0}
   InventoryItem: {fileID: 0}
 --- !u!54 &5718952299244760954
@@ -6943,6 +6943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipmentKey: "C\xE2nhamo"
+  equipmentName: 
   Icon: {fileID: 21300000, guid: 9268f43cf45d1a843b13c3193c415821, type: 3}
 --- !u!1 &5718952299755803649
 GameObject:
@@ -7055,6 +7056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipmentKey: Pedra
+  equipmentName: 
   Icon: {fileID: 21300000, guid: a1bc42eecd7b30b4b96aab1e1f384435, type: 3}
 --- !u!1 &6883775443000678193
 GameObject:
@@ -7136,6 +7138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipmentKey: Revolver
+  equipmentName: 
   Icon: {fileID: 21300000, guid: 373810018effd2f44b4887644bfcdddb, type: 3}
   playerCamera: {fileID: 5718952297910587322}
   damage: 40
