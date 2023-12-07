@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip playerHurtSound;
+    [SerializeField] private AudioClip playerKillSound;
 
     public Transform ItemContent;
     public GameObject InventoryItem;
@@ -138,8 +140,31 @@ public class PlayerManager : MonoBehaviour
     public void ReceiveDamage(int damage)
     {
         CurrentHealth -= damage;
-        audioSource.PlayOneShot(playerHurtSound);
-        GameHudManager.Singleton.PlayerHealthUpdated();
-        Debug.Log(String.Format("Received Damage {0}/{1}", CurrentHealth, MaxHealth));
+        if (CurrentHealth > 0){
+            audioSource.PlayOneShot(playerHurtSound);
+            GameHudManager.Singleton.PlayerHealthUpdated();
+            Debug.Log(String.Format("Received Damage {0}/{1}", CurrentHealth, MaxHealth));
+        }
+        else{
+            StartCoroutine(PlayAudioAndLoadScene(playerKillSound, "GameOver"));
+        }
     }
+    
+    private IEnumerator PlayAudioAndLoadScene(AudioClip audioClip, string sceneName)
+    {
+        audioSource.PlayOneShot(audioClip);
+
+        // Aguarda um pequeno intervalo antes de verificar se o áudio terminou
+        yield return new WaitForSeconds(audioClip.length);
+
+        // Aguarda o tempo necessário para a reprodução do áudio
+        while (audioSource.isPlaying)
+        {
+            yield return null;
+        }
+
+        // Carrega a cena após o término do áudio
+        SceneManager.LoadScene(sceneName);
+}
+
 }

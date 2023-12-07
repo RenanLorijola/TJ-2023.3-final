@@ -3,7 +3,14 @@ guid: 0fc50cccff5ae3a45aa928b67452f947
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerCamera: {instanceID: 0}
+  - equipmentHolderTransform: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - playerHurtSound: {instanceID: 0}
+  - playerKillSound: {fileID: 8300000, guid: da0bd608e4c0ba546b7ff0416807ff1d, type: 3}
+  - ItemContent: {instanceID: 0}
+  - InventoryItem: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
