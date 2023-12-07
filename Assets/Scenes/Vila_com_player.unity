@@ -5240,7 +5240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   not: 0
   conditions:
-  - flagName: grabbed_knife
+  - flagName: grabbed_gun
     flagValue: 0
   - flagName: talked_with_katia
     flagValue: 1
