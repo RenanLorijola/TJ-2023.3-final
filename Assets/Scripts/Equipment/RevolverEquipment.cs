@@ -8,6 +8,7 @@ public class RevolverEquipment : Equipment
 
     [SerializeField] private Camera playerCamera;
     [SerializeField] private int damage = 40;
+    [SerializeField] private int damageDebug = 300;
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private float shootCooldown = 1f;
@@ -62,8 +63,16 @@ public class RevolverEquipment : Equipment
                     animator.SetTrigger(Shoot);
                     currentRounds--;
                     gunshotParticleSystem.Play();
-                    CheckHit();
+                    CheckHit(damage);
                 }
+            }
+            else if (Input.GetMouseButtonDown(2) && CanShoot)
+            {
+                audioSource.PlayOneShot(shootSound);
+                animator.SetTrigger(Shoot);
+                currentRounds--;
+                gunshotParticleSystem.Play();
+                CheckHit(damageDebug);
             }
             else if (Input.GetKeyDown(KeyCode.R))
             {
@@ -80,7 +89,7 @@ public class RevolverEquipment : Equipment
         currentRounds = maxRounds;
     }
 
-    private void CheckHit()
+    private void CheckHit(int this_damage)
     {
         var ray = playerCamera.ScreenPointToRay(playerCamera.ViewportToScreenPoint(new Vector3(0.5f, 0.5f)));
         RaycastHit hit;
@@ -89,7 +98,7 @@ public class RevolverEquipment : Equipment
             Enemy enemy = hit.transform.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.ReceiveDamage(damage);
+                enemy.ReceiveDamage(this_damage);
             }
             else
             {
