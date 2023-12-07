@@ -3192,7 +3192,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4803590418286029823}
   - component: {fileID: 4803590418286029816}
-  - component: {fileID: 4803590418286029817}
   - component: {fileID: 2371547215611173414}
   m_Layer: 0
   m_Name: SK_Sheep_dark
@@ -3239,29 +3238,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4803590418286029817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4803590418286029818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e5010bff315c6e4c8a413f69e3d6458, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  walkForwardAnimation: walk_forward
-  walkBackwardAnimation: walk_backwards
-  runForwardAnimation: run_forward
-  turn90LAnimation: turn_90_L
-  turn90RAnimation: turn_90_R
-  trotAnimation: trot_forward
-  sittostandAnimation: sit_to_stand
-  standtositAnimation: stand_to_sit
-  walkSpeed: 20
-  runSpeed: 40
 --- !u!65 &2371547215611173414
 BoxCollider:
   m_ObjectHideFlags: 0
