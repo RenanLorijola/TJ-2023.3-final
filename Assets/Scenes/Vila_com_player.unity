@@ -1881,14 +1881,13 @@ GameObject:
   - component: {fileID: 222293549}
   - component: {fileID: 222293551}
   - component: {fileID: 222293550}
-  - component: {fileID: 222293552}
   m_Layer: 0
   m_Name: ResumeCommands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &222293549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1947,20 +1946,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222293548}
   m_CullTransparentMesh: 1
---- !u!114 &222293552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 222293548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db6f17cec06e05f41a1ec56b04594f2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryButton: {fileID: 0}
-  inventoryCloseButton: {fileID: 0}
 --- !u!4 &226993183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4111967305598926, guid: 75869f38472ead44780a08729066497a,
