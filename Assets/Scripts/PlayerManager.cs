@@ -17,8 +17,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private int playerMaxHealth = 100;
 
     [SerializeField] private List<Equipment> equipments;
-
-
+    
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip playerHurtSound;
     [SerializeField] private AudioClip playerKillSound;
@@ -27,6 +26,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject InventoryItem;
 
 
+    public Camera PlayerCamera => playerCamera;
     public int CurrentHealth { get; private set; }
     public int MaxHealth => playerMaxHealth;
     
