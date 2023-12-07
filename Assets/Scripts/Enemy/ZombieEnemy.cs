@@ -46,7 +46,10 @@ public class ZombieEnemy : Enemy
         // Debug.Log(String.Format("Zombie Status {0} | Zombie health {1}", enemyStatus, CurrentHealth));
         staggerCooldownTime = Mathf.Max(0,staggerCooldownTime - Time.deltaTime);
         attackCooldownTime = Mathf.Max(0,attackCooldownTime - Time.deltaTime);
-
+        if (GameManager.Singleton.GetFlag("boss_fase") == 3)
+        {
+            ReceiveDamage(999);
+        }
         if (enemyStatus == ZombieStatus.Idle)
         {
             if (Vector3.Distance(PlayerManager.Singleton.transform.position, transform.position) <= chaseTriggerDistance)
@@ -128,5 +131,6 @@ public class ZombieEnemy : Enemy
         enemyStatus = ZombieStatus.Dead;
         navigationAgent.enabled = false;
         gameObject.GetComponent<Collider>().enabled = false;
+        gameObject.transform.GetChild(1).gameObject.GetComponent<Collider>().enabled = false;
     }
 }

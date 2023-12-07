@@ -68,6 +68,7 @@ public class Boss1Enemy : Enemy
         {
             if (Vector3.Distance(PlayerManager.Singleton.transform.position, transform.position) <= chaseTriggerDistance)
             {
+                GameManager.Singleton.SetFlag("boss_fase", 1);
                 spellCooldownTime = spellCooldown;
                 enemyStatus = EnemyStatus.Chasing;
                 animator.SetBool(Running, true);
@@ -94,7 +95,6 @@ public class Boss1Enemy : Enemy
                     animator.SetTrigger(SpellFollow);
                     enemyStatus = EnemyStatus.SpellFollow;
                 }
-          
             }
         }
     }
@@ -162,7 +162,7 @@ public class Boss1Enemy : Enemy
         if (enemyStatus != EnemyStatus.Dead)
         {
             base.ReceiveDamage(damage);
-            Debug.Log(String.Format("Zombie Status {0} | Zombie health {1}", enemyStatus, CurrentHealth));
+            Debug.Log(String.Format("Boss1 Status {0} | Boss1 health {1}", enemyStatus, CurrentHealth));
 
             int hurtSoundIndex = Random.Range(0, hurtSounds.Length);
             
@@ -185,7 +185,8 @@ public class Boss1Enemy : Enemy
 
     private void Die()
     {
-        Debug.Log("Die");
+        GameManager.Singleton.SetFlag("boss_fase", 2);
+        Debug.Log("Boss1 Died");
         animator.applyRootMotion = true;
         animator.SetTrigger(Death);
         enemyStatus = EnemyStatus.Dead;

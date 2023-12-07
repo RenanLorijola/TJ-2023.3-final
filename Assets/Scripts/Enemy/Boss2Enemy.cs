@@ -128,7 +128,8 @@ public class Boss2Enemy : Enemy
     }
 
     private void Die()
-    {
+    {   
+        GameManager.Singleton.SetFlag("boss_fase", 3);
         Debug.Log("Die");
         animator.applyRootMotion = true;
         animator.SetTrigger(Death);

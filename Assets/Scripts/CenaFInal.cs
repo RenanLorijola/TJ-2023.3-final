@@ -21,8 +21,9 @@ public class CenaFInal : MonoBehaviour
     {
         // Verifica a distância entre o jogador e o alvo
         float distanceToTarget = Vector3.Distance(transform.position, targetLocation.position);
+        bool matou_o_boss = GameManager.Singleton.GetFlag("boss_fase") == 3;
         // Se o jogador estiver dentro do raio carregue a cena
-        if (distanceToTarget < 10)
+        if (distanceToTarget < 10 && matou_o_boss)
         {
             SceneManager.LoadScene("CenaFinal");
         }
