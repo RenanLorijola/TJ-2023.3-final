@@ -89,6 +89,7 @@ public class ZombieEnemy : Enemy
     public void SttagerAnimationEnd()
     {
         enemyStatus = ZombieStatus.Chasing;
+        animator.SetBool(Running, true);
         navigationAgent.enabled = true;
         staggerCooldownTime = staggerCooldown;
     }
