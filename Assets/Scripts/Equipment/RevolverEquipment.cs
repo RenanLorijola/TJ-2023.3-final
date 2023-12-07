@@ -82,7 +82,7 @@ public class RevolverEquipment : Equipment
 
     private void CheckHit()
     {
-        var ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        var ray = playerCamera.ScreenPointToRay(playerCamera.ViewportToScreenPoint(new Vector3(0.5f, 0.5f)));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 999, LayerMask.GetMask("Enemy")))
         {
