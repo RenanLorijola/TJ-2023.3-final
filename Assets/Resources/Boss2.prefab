@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8647696334103740819
 Transform:
   m_ObjectHideFlags: 0
@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.27, y: 1.2, z: 2.03}
-  m_Center: {x: 0, y: 0.18, z: 0.42}
+  m_Size: {x: 1.27, y: 1.2, z: 2.53}
+  m_Center: {x: 0, y: 0.18, z: 0.62}
 --- !u!54 &8647696334103740816
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -86,9 +86,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8647696334443355968}
   - component: {fileID: 8647696334443355971}
-  - component: {fileID: 8647696334443355970}
   - component: {fileID: 8647696334443355973}
   - component: {fileID: 8647696334443355969}
+  - component: {fileID: 1078513632037895758}
   m_Layer: 10
   m_Name: Boss2
   m_TagString: Untagged
@@ -135,31 +135,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8647696334443355970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8647696334443355972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84584162d17fcc04a919bebcbc682f7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyMaxHealth: 1000
-  moveSpeed: 12
-  navigationAgent: {fileID: 8647696334443355971}
-  animator: {fileID: 8155156332858914408}
-  chaseTriggerDistance: 20
-  distanceToAttack: 2
-  staggerCooldown: 3
-  AttackCooldown: 1
-  hitCheckObjet: {fileID: 8647696334103740818}
-  audioSource: {fileID: 8647696334443355969}
-  hurtSounds:
-  - {fileID: 8300000, guid: f92126620a900b84ebd510a1c6448b24, type: 3}
-  - {fileID: 8300000, guid: d9cf5c126c394da42a274ec6c1c812ed, type: 3}
 --- !u!136 &8647696334443355973
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -270,6 +245,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1078513632037895758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8647696334443355972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141280d8e4203a34daab960d6f59ee6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaxHealth: 600
+  moveSpeed: 12
+  navigationAgent: {fileID: 8647696334443355971}
+  animator: {fileID: 8155156332858914408}
+  chaseTriggerDistance: 9999999
+  distanceToAttack: 2
+  staggerCooldown: 3
+  AttackCooldown: 1
+  hitCheckObjet: {fileID: 8647696334103740818}
+  audioSource: {fileID: 8647696334443355969}
+  hurtSounds:
+  - {fileID: 8300000, guid: f92126620a900b84ebd510a1c6448b24, type: 3}
+  - {fileID: 8300000, guid: d9cf5c126c394da42a274ec6c1c812ed, type: 3}
+  thunderAudio: {fileID: 8300000, guid: c2efb4ad15b611f41b880dda6e7d5637, type: 3}
 --- !u!1001 &2325681308133854201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -361,7 +362,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2325681308133854201}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3892648604553052021
+--- !u!114 &6130488164761578680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -370,7 +371,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3208554159038576296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 038fb0b51c4d291429df6ab5f721e2fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 934afc8026d0d584b90460964288c33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &8155156332858914408 stripped

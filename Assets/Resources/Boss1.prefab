@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3703f0955a3e8642902639640a935c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMaxHealth: 2000
+  enemyMaxHealth: 800
   moveSpeed: 4
   navigationAgent: {fileID: 8647696334443355971}
   animator: {fileID: 1991204441759016626}
@@ -309,6 +309,8 @@ MonoBehaviour:
   burstProjectilePrefab: {fileID: 8726695459287292975, guid: 329be1c4e196e5b45ab3a0b54b8791aa,
     type: 3}
   projectileSpawnTransform: {fileID: 1669767357344769477}
+  secondPhasePrefab: {fileID: 8647696334443355972, guid: 13a0a2df9c41ce74c8c1ff71f9d8f315,
+    type: 3}
 --- !u!1001 &5388759582820096803
 PrefabInstance:
   m_ObjectHideFlags: 0

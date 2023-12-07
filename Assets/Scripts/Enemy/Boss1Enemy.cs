@@ -36,6 +36,9 @@ public class Boss1Enemy : Enemy
     [SerializeField] private Transform projectileSpawnTransform;
 
 
+    [SerializeField] private GameObject secondPhasePrefab;
+
+
 
 
     private EnemyStatus enemyStatus = EnemyStatus.Idle;
@@ -188,5 +191,13 @@ public class Boss1Enemy : Enemy
         enemyStatus = EnemyStatus.Dead;
         navigationAgent.enabled = false;
         gameObject.GetComponent<Collider>().enabled = false;
+        Invoke("SpawnSecondPhase", 4f);
+    }
+
+    private void SpawnSecondPhase()
+    {
+        Destroy(gameObject);
+        Instantiate<GameObject>(secondPhasePrefab, transform.position, Quaternion.identity);
+        GameHudManager.Singleton.Fade(1f, 0f, 1f, null);
     }
 }
