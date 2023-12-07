@@ -1952,6 +1952,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3424292742417651010, guid: 9d554da94b53e4d4b8fadb3332fe5302,
+        type: 3}
+      propertyPath: equipmentName
+      value: knife
+      objectReference: {fileID: 0}
     - target: {fileID: 5718952299244760944, guid: 9d554da94b53e4d4b8fadb3332fe5302,
         type: 3}
       propertyPath: m_Name
@@ -2017,10 +2022,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6107943118578683274, guid: 9d554da94b53e4d4b8fadb3332fe5302,
+        type: 3}
+      propertyPath: equipmentKey
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107943118578683274, guid: 9d554da94b53e4d4b8fadb3332fe5302,
+        type: 3}
+      propertyPath: equipmentName
+      value: Gun
+      objectReference: {fileID: 0}
     - target: {fileID: 6592249636379250272, guid: 9d554da94b53e4d4b8fadb3332fe5302,
         type: 3}
       propertyPath: m_ScaleFactor
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883775443000678193, guid: 9d554da94b53e4d4b8fadb3332fe5302,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d554da94b53e4d4b8fadb3332fe5302, type: 3}
@@ -10259,6 +10279,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228437979231951741, guid: d7065de3aedab184dbdd88293c50bceb,
+        type: 3}
+      propertyPath: gameFlags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228437979231951741, guid: d7065de3aedab184dbdd88293c50bceb,
+        type: 3}
+      propertyPath: gameFlags.Array.data[0]
+      value: grabbed_knife
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228437979231951741, guid: d7065de3aedab184dbdd88293c50bceb,
+        type: 3}
+      propertyPath: gameFlags.Array.data[1]
+      value: grabbed_gun
       objectReference: {fileID: 0}
     - target: {fileID: 7228437979231951742, guid: d7065de3aedab184dbdd88293c50bceb,
         type: 3}

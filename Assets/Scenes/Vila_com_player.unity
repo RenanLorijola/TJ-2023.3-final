@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 103483828}
-  m_IndirectSpecularColor: {r: 0.41755354, g: 0.5546111, b: 0.6851747, a: 1}
+  m_IndirectSpecularColor: {r: 0.41764054, g: 0.5547247, b: 0.68535006, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -3625,7 +3625,7 @@ PrefabInstance:
     - target: {fileID: 6562031803846321546, guid: 619f88d1e87438a43a166f80364f0fd4,
         type: 3}
       propertyPath: m_Name
-      value: Char_3_h (1)
+      value: Skipper
       objectReference: {fileID: 0}
     - target: {fileID: 6562031803846321546, guid: 619f88d1e87438a43a166f80364f0fd4,
         type: 3}
@@ -4349,16 +4349,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   events:
-  - eventName: Debug
+  - eventName: Skipper
     conditions: []
     actions:
-    - actionName: Debug
+    - actionName: Skipper
       type: 0
       dialogs:
         Value:
         - talker: 2
           talkerCustom: '!'
-          message: "Oi, eu sou o debugger, vou te mandar para a pr\xF3xima fase"
+          message: "Oi, eu sou o Skipper, vou te mandar para a pr\xF3xima fase"
       flagName: 
       flagValue: 0
       waitSeconds: 0
