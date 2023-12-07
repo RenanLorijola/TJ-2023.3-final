@@ -18,15 +18,27 @@ public class InventoryManager : MonoBehaviour
 
         foreach (var item in equipments)
         {
-            if (!item.isActiveAndEnabled)
-            {
-                GameObject obj = Instantiate(InventoryItem, ItemContent);
-                var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
-                var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+            int grabbed_knife = GameManager.Singleton.GetFlag("grabbed_knife");
+            int grabbed_gun = GameManager.Singleton.GetFlag("grabbed_gun");
 
-                itemName.text = item.EquipmentKey;
-                itemIcon.sprite = item.Icon;
-            }            
+            if ((item.name.ToLower() == "knife" && grabbed_knife == 1) ||
+                (item.name.ToLower() == "gun" && grabbed_gun == 1))
+            {
+                if (!item.isActiveAndEnabled)
+                {
+                    ShowInventory(item);
+                }
+            }      
         }
+    }
+
+    private void ShowInventory(Equipment item)
+    {
+        GameObject obj = Instantiate(InventoryItem, ItemContent);
+        var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
+        var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+
+        itemName.text = item.EquipmentName;
+        itemIcon.sprite = item.Icon;
     }
 }

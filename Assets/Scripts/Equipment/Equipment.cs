@@ -8,8 +8,10 @@ public class Equipment : MonoBehaviour
 {
 
     [SerializeField] private string equipmentKey;
+    [SerializeField] private string equipmentName;
 
     public string EquipmentKey => equipmentKey;
+    public string EquipmentName => equipmentName;
     public Sprite Icon;
 
     public static Equipment Current { get; private set; }
