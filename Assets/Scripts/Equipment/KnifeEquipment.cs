@@ -9,6 +9,7 @@ public class KnifeEquipment : Equipment
     [SerializeField] private AudioSource knifeAudioSource;
     [SerializeField] private float attackCooldown = 0.5f;
     [SerializeField] private Animator animator;
+    [SerializeField] private int damage = 20;
 
 
     [SerializeField] private AudioClip attackSound;
@@ -43,8 +44,22 @@ public class KnifeEquipment : Equipment
     public void CheckHit()
     {
         knifeAudioSource.PlayOneShot(attackSound);
-        knifeHitObject.SetActive(true);
+        // knifeHitObject.SetActive(true);
         Invoke("CheckHitEnd", 0.1f);
+        RaycastHit hit;
+        if(Physics.BoxCast(PlayerManager.Singleton.PlayerCamera.transform.position, new Vector3(1, 1, 0.1f), PlayerManager.Singleton.PlayerCamera.transform.forward, out hit, PlayerManager.Singleton.PlayerCamera.transform.rotation, 1f, LayerMask.GetMask("Enemy")))
+        {
+            Enemy enemy = hit.transform.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.ReceiveDamage(damage);
+            }
+            else
+            {
+                Debug.Log("Missfire ?");
+                Debug.Log(hit.transform.gameObject);
+            }
+        }
     }
 
     protected void CheckHitEnd()

@@ -633,6 +633,7 @@ MonoBehaviour:
   knifeAudioSource: {fileID: 3424292742417651008}
   attackCooldown: 0.5
   animator: {fileID: 3424292742417651009}
+  damage: 20
   attackSound: {fileID: 8300000, guid: e89e6454f49293e4b81569bb1395596e, type: 3}
   knifeHitObject: {fileID: 5718952297730057853}
 --- !u!95 &3424292742417651009
@@ -936,7 +937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5718952297730057825
 Transform:
   m_ObjectHideFlags: 0
@@ -6644,8 +6645,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 5718952297910587322}
-  walkSpeed: 6
-  runSpeed: 12
+  walkSpeed: 5
+  runSpeed: 11
   dashSpeed: 30
   dashDuration: 0.2
   dashCooldown: 1
