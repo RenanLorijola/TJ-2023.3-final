@@ -66,7 +66,7 @@ public class RevolverEquipment : Equipment
                     CheckHit(damage);
                 }
             }
-            else if (Input.GetMouseButtonDown(2) && CanShoot)
+            else if (Input.GetKeyDown(KeyCode.Alpha2) && CanShoot)
             {
                 audioSource.PlayOneShot(shootSound);
                 animator.SetTrigger(Shoot);
