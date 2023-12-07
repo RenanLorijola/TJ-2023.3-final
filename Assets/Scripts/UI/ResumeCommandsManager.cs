@@ -6,7 +6,7 @@ public class ResumeCommandsManager : MonoBehaviour
 {
 
     public GameObject resumeCommands;
-    private static bool isOpen;
+    public bool isOpen;
 
     void Update()
     {
