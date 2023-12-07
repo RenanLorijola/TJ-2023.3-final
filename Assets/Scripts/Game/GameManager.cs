@@ -40,6 +40,17 @@ public class GameManager : MonoBehaviour
         {
             throw new Exception("Missing flag with name: " + flagName);
         }
+
+        if (flagName == "grabbed_gun")
+        {
+            PlayerManager.Singleton.GetEquipments();
+        }
+
+        if (flagName == "grabbed_knife")
+        {
+            PlayerManager.Singleton.GetEquipments();
+        }
+
         return _flagsDictionary[flagName].Value;
     }
 

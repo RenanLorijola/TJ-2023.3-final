@@ -6,10 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/Creditos.unity
+    path: Assets/Scenes/GameOver.unity
     guid: cfdd5d8f8b5307f42adfc8f334bce719
   - enabled: 1
     path: Assets/Scenes/Floresta.unity
@@ -23,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Vila_com_player.unity
     guid: c5ce7c399fcffe546a2b6a79b594427d
+  - enabled: 1
+    path: Assets/Scenes/CenaFinal.unity
+    guid: 792c22e9c964ec24e88001480e1816ff
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: efba2debab38b844596290080919331c
   m_configObjects: {}

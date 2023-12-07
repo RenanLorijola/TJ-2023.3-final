@@ -10,18 +10,18 @@ public class RevolverEquipment : Equipment
     [SerializeField] private int damage = 40;
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource audioSource;
-    [SerializeField]private float shootCooldown = 1f;
-    [SerializeField]private int maxRounds = 6;
+    [SerializeField] private float shootCooldown = 1f;
+    [SerializeField] private int maxRounds = 6;
     [SerializeField] private ParticleSystem gunshotParticleSystem;
-    
 
-    [SerializeField]private AudioClip shootSound;
-    [SerializeField]private AudioClip reloadSound;
-    [SerializeField]private AudioClip emptySound;
-    
-    
-    
-    
+
+    [SerializeField] private AudioClip shootSound;
+    [SerializeField] private AudioClip reloadSound;
+    [SerializeField] private AudioClip emptySound;
+
+
+
+
     private static readonly int Shoot = Animator.StringToHash("Shoot");
     private static readonly int Reload = Animator.StringToHash("Reload");
 
@@ -30,8 +30,8 @@ public class RevolverEquipment : Equipment
     private int currentRounds = 0;
 
     public bool CanShoot => CanUseEquipment() && cooldownTime <= 0 && !reloading;
-    
-    
+
+
     // Update is called once per frame
 
     private void Awake()
@@ -64,7 +64,8 @@ public class RevolverEquipment : Equipment
                     gunshotParticleSystem.Play();
                     CheckHit();
                 }
-            } else if (Input.GetKeyDown(KeyCode.R))
+            }
+            else if (Input.GetKeyDown(KeyCode.R))
             {
                 reloading = true;
                 audioSource.PlayOneShot(reloadSound);

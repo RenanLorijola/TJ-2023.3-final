@@ -8,8 +8,10 @@ public class Equipment : MonoBehaviour
 {
 
     [SerializeField] private string equipmentKey;
+    [SerializeField] private string equipmentName;
 
     public string EquipmentKey => equipmentKey;
+    public string EquipmentName => equipmentName;
     public Sprite Icon;
 
     public static Equipment Current { get; private set; }
@@ -46,17 +48,17 @@ public class Equipment : MonoBehaviour
 
     protected virtual void OnEquip()
     {
-        
+
     }
 
     protected virtual void OnUnequip()
     {
-        
+
     }
 
     protected bool CanUseEquipment()
     {
-        return !GameManager.Singleton.PlayingEvent;
+        return !GameManager.Singleton.PlayingEvent && Time.timeScale > 0f;
     }
-    
+
 }
