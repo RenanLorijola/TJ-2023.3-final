@@ -5,8 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class ButtonSkip : MonoBehaviour
 {
-    public void ChamaVila() {
+    public void ChamaVila()
+    {
         SceneManager.LoadScene("Vila_com_player");
     }
-    
+
+    void Update()
+    {
+        if (Input.anyKey)
+        {
+            SceneManager.LoadScene("Vila_com_player");
+        }
+    }
 }
