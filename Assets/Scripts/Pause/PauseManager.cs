@@ -8,6 +8,7 @@ public class PauseManager : MonoBehaviour
     public void carregarMenu()
     {
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1f;
     }
     public void continuar()
     {
