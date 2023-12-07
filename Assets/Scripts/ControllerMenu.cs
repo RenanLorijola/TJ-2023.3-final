@@ -6,16 +6,22 @@ using UnityEngine.SceneManagement;
 public class ControllerMenu : MonoBehaviour
 {
     // Chama cena de créditos
-    public void Creditos() {
+    public void Creditos()
+    {
         SceneManager.LoadScene("Creditos");
     }
     // Chama cena 1
-     public void Iniciar() {
+    public void Iniciar()
+    {
         SceneManager.LoadScene("Cutscene");
     }
     // Sai do jogo
-     public void Sair() {
-        print("Saindo do jogo");
+    public void Sair()
+    {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 }
