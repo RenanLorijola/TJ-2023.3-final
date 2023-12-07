@@ -14,8 +14,8 @@ public class KnifeEquipment : Equipment
     [SerializeField] private AudioClip attackSound;
 
     [SerializeField] private GameObject knifeHitObject;
-    
-    
+
+
     private float cooldownTime = 0f;
 
     private static readonly int Attack = Animator.StringToHash("Attack");
@@ -36,7 +36,7 @@ public class KnifeEquipment : Equipment
             {
                 cooldownTime = attackCooldown;
                 animator.SetTrigger(Attack);
-            } 
+            }
         }
     }
 

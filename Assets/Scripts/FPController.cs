@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- 
+
 [RequireComponent(typeof(CharacterController))]
 public class FPController : MonoBehaviour
 {
@@ -14,15 +14,15 @@ public class FPController : MonoBehaviour
     public float dashCooldown = 1;
     public float jumpPower = 7f;
     public float gravity = 10f;
- 
- 
+
+
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
- 
- 
+
+
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
- 
+
     public bool enableMove = true;
     public bool enableCameraRotation = true;
 
@@ -34,8 +34,8 @@ public class FPController : MonoBehaviour
     public bool CanMove => enableMove && !GameManager.Singleton.PlayingEvent;
     public bool CanRotateCamera => CanMove && enableCameraRotation;
     public bool DashInCooldown => dashingCooldownTime > 0;
- 
-    
+
+
     CharacterController characterController;
     void Start()
     {
@@ -43,10 +43,10 @@ public class FPController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
- 
+
     void Update()
     {
- 
+
         #region Handles Movment
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
@@ -71,9 +71,9 @@ public class FPController : MonoBehaviour
         {
             if (dashingCooldownTime > 0)
             {
-                dashingCooldownTime = Mathf.Max(0f,dashingCooldownTime - Time.deltaTime);
+                dashingCooldownTime = Mathf.Max(0f, dashingCooldownTime - Time.deltaTime);
             }
-            
+
             bool isRunning = Input.GetKey(KeyCode.LeftShift) && canRun;
             float movementSpeed = CanMove ? (isRunning ? runSpeed : walkSpeed) : 0;
             movementDirectionY = moveDirection.y;
@@ -89,7 +89,7 @@ public class FPController : MonoBehaviour
         }
 
         #endregion
- 
+
         #region Handles Jumping
         if (Input.GetButton("Jump") && canJump)
         {
@@ -99,26 +99,39 @@ public class FPController : MonoBehaviour
         {
             moveDirection.y = movementDirectionY;
         }
- 
+
         if (!characterController.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
         }
- 
+
         #endregion
- 
+
         #region Handles Rotation
         characterController.Move(moveDirection * Time.deltaTime);
- 
-        if (CanRotateCamera)
+
+        if (CanRotateCamera && Time.timeScale > 0)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
- 
+
+        #endregion
+
+        #region Handles Pause
+
+        if (Time.timeScale > 0)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
         #endregion
     }
 }
- 
