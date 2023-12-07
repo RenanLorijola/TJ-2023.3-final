@@ -3606,6 +3606,24 @@ MonoBehaviour:
       audioVolume: 0
       nextEvent: {fileID: 0}
       sceneName: 
+    - actionName: grabbed_knife
+      type: 6
+      dialogs:
+        Value: []
+      flagName: grabbed_knife
+      flagValue: 1
+      waitSeconds: 0
+      fadeFromAlpha: 0
+      fadeToAlpha: 0
+      fadeSeconds: 0
+      customActionName: 
+      fadeFromVolume: 0
+      fadeToVolume: 0
+      fadeVolumeSeconds: 0
+      audioClip: {fileID: 8300000, guid: e1e8752e5022b6741b9e2ab44ce4e374, type: 3}
+      audioVolume: 1
+      nextEvent: {fileID: 0}
+      sceneName: 
 --- !u!114 &388172971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9698,6 +9716,24 @@ MonoBehaviour:
       fadeVolumeSeconds: 0
       audioClip: {fileID: 0}
       audioVolume: 0
+      nextEvent: {fileID: 0}
+      sceneName: 
+    - actionName: grabbed_gun
+      type: 6
+      dialogs:
+        Value: []
+      flagName: grabbed_gun
+      flagValue: 1
+      waitSeconds: 0
+      fadeFromAlpha: 0
+      fadeToAlpha: 0
+      fadeSeconds: 0
+      customActionName: 
+      fadeFromVolume: 0
+      fadeToVolume: 0
+      fadeVolumeSeconds: 0
+      audioClip: {fileID: 8300000, guid: e1e8752e5022b6741b9e2ab44ce4e374, type: 3}
+      audioVolume: 1
       nextEvent: {fileID: 0}
       sceneName: 
 --- !u!114 &1122241952
