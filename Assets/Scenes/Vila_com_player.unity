@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 103483828}
-  m_IndirectSpecularColor: {r: 0.0031112558, g: 0.00618706, b: 0.014234878, a: 1}
+  m_IndirectSpecularColor: {r: 0.0031306073, g: 0.0061690155, b: 0.014242524, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -3307,7 +3307,7 @@ MonoBehaviour:
         Value:
         - talker: 2
           talkerCustom: Thiago
-          message: O prefeito estava agindo mutio estranho, desde o primeiro desaparecimento.
+          message: O prefeito estava agindo muito estranho, desde o primeiro desaparecimento.
         - talker: 2
           talkerCustom: Beatriz
           message: "Sim! Com a primeira crian\xE7a que desapareceu ele parecia at\xE9
@@ -4033,9 +4033,9 @@ MonoBehaviour:
             lugar que a gente ia."
         - talker: 2
           talkerCustom: Arthur
-          message: "Olha, d\xE1 uma falada l\xE1 com o prefeito Seu Ant\xF4nio, ele
-            parece que estava meio preocupado com tudo isso, falando at\xE9 de alguma
-            lenda, n\xE3o sei o que."
+          message: "Olha, d\xE1 uma falada l\xE1 com o prefeito Ant\xF4nio, ele parece
+            que estava meio preocupado com tudo isso, falando at\xE9 de alguma lenda,
+            n\xE3o sei o que."
         - talker: 2
           talkerCustom: Jorge
           message: Obrigado, Arthur, vou perguntar para ele sim.
@@ -6557,7 +6557,7 @@ MonoBehaviour:
         Value:
         - talker: 2
           talkerCustom: Thiago
-          message: O prefeito estava agindo mutio estranho, desde o primeiro desaparecimento.
+          message: O prefeito estava agindo muito estranho, desde o primeiro desaparecimento.
         - talker: 2
           talkerCustom: Beatriz
           message: "Sim! Com a primeira crian\xE7a que desapareceu ele parecia at\xE9
@@ -6633,6 +6633,32 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1128734663}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &746043114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6434065156736322454, guid: 99181fcbcabff1243bbe58f236aa325e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2095617896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &746043116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746043114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce85889fb704220967a6300533a0387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  not: 0
+  conditions:
+  - flagName: talked_with_katia
+    flagValue: 1
+  - flagName: grabbed_gun
+    flagValue: 1
+  - flagName: grabbed_knife
+    flagValue: 1
 --- !u!1001 &751617098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7728,8 +7754,7 @@ MonoBehaviour:
             na vila. Talvez algo sobre um tal de Py'a..."
         - talker: 2
           talkerCustom: "Seu Ant\xF4nio"
-          message: "PY'AMIR\u0128\u0128\u0128\u0128 !!!!! \u30FE(\xB4\u0F0E\u0EB6
-            \u06DD \xB4\u0F0E\u0EB6\u0F0E\u0EB6)\uFF89  "
+          message: "PY'AMIR\u0128\u0128\u0128\u0128 !!!!! \u0CA0\u256D\u256E\u0CA0"
         - talker: 2
           talkerCustom: Jorge
           message: "\xC9... Py'amir\u0129, quem \xE9 esse a\xED?"
@@ -9187,6 +9212,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2296178865371773816, guid: 9d554da94b53e4d4b8fadb3332fe5302,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3424292742417651010, guid: 9d554da94b53e4d4b8fadb3332fe5302,
         type: 3}
       propertyPath: equipmentName
@@ -17781,6 +17811,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 877234885}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2095617896
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 763725407}
+    m_Modifications:
+    - target: {fileID: 6434065156736322454, guid: 99181fcbcabff1243bbe58f236aa325e,
+        type: 3}
+      propertyPath: m_Name
+      value: QuestMark2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911790275730073624, guid: 99181fcbcabff1243bbe58f236aa325e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911790275730073624, guid: 99181fcbcabff1243bbe58f236aa325e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911790275730073624, guid: 99181fcbcabff1243bbe58f236aa325e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911790275730073624, guid: 99181fcbcabff1243bbe58f236aa325e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911790275730073624, guid: 99181fcbcabff1243bbe58f236aa325e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911790275730073624, guid: 99181fcbcabff1243bbe58f236aa325e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911790275730073624, guid: 99181fcbcabff1243bbe58f236aa325e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911790275730073624, guid: 99181fcbcabff1243bbe58f236aa325e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911790275730073624, guid: 99181fcbcabff1243bbe58f236aa325e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911790275730073624, guid: 99181fcbcabff1243bbe58f236aa325e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 135.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911790275730073624, guid: 99181fcbcabff1243bbe58f236aa325e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99181fcbcabff1243bbe58f236aa325e, type: 3}
 --- !u!4 &2098533399 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4987965703098078, guid: 88ed93e7d9b683340b081338cb6477dc,
