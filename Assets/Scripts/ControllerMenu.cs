@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ControllerMenu : MonoBehaviour
 {
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    
     // Chama cena de créditos
     public void Creditos()
     {

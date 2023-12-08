@@ -14,7 +14,7 @@ public class CenaFInal : MonoBehaviour
 
         if (targetLocation == null)
         {
-            Debug.LogError("TargetLocation não encontrado! Certifique-se de que o objeto está na cena e tem o nome correto.");
+            Debug.LogError("TargetLocation não encontrado!");
         }
     }
     void Update()
